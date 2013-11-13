@@ -18,8 +18,8 @@ the focus.
 The build system is cmake (only tested on my linux box...). If everything
 works as intended these commands should build the examples:
 ```
-    git submodule init
-    git submodule update
+    cd <to this repository name>
+    git submodule update --init --recursive
     mkdir build
     cd build
     cmake ../
