@@ -1,0 +1,44 @@
+On MBR OSX 10.9, there were problems with these examples: 04, 10, 12, 13
+
+Script started on Wed Nov 13 22:21:36 2013
+[?1034hbash-3.2$ ./00skeleton 
+bash-3.2$ ./00skeleton [1P[1@1
+bash-3.2$ ./01shader_vbo1 
+bash-3.2$ ./01shader_vbo2 [K[K
+bash-3.2$ ./01shader_vbo[K[K[K[K[K[K[K[K[K[K[K2indexed_vbo 
+bash-3.2$ ./02indexed_vbo [K[K[K[K[K[K[K[K[K[K[K[K[K3texture 
+bash-3.2$ ./03texture [K[K[K[K[K[K[K[K[K4perspective 
+bash-3.2$ ./04perspective [K[K[K[K[K[K[K[K[K[K[K[K[K5fbo_fxaa 
+ERROR: 0:2: Attempt to redeclare 'texture' as a variable
+ERROR: 0:192: Attempt to use 'texture' as a variable
+ERROR: 0:193: Attempt to use 'texture' as a variable
+bash-3.2$ ./06instancing1 
+bash-3.2$ ./06instancing1 [K[K
+06instancing1                 06instancing2_buffer_texture  06instancing3_uniform_buffer  
+bash-3.2$ ./06instancing2_buffer_texture 
+bash-3.2$ ./06instancing2_buffer_texture [K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K3_uniform_buffer 
+bash-3.2$ ./06instancing3_uniform_buffer [K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K7geometry_shader_blending 
+bash-3.2$ ./08map_buffer 
+bash-3.2$ ./09transform_feedback 
+bash-3.2$ ./10queries_conditional_render 
+generating chunks, this may take a while.
+Abort trap: 6
+bash-3.2$ ./11tesselation 
+^C
+bash-3.2$ 
+bash-3.2$ ./12shader_image_load_store 
+ERROR: 0:1: '' :  version '420' is not supported
+ERROR: 0:2: '' :  #version required and missing.
+ERROR: 0:2: '0' : syntax error syntax error
+bash-3.2$ ls
+00skeleton			03texture			06instancing2_buffer_texture	09transform_feedback		13compute_shader_nbody		cmake_install.cmake
+01shader_vbo1			04perspective			06instancing3_uniform_buffer	10queries_conditional_render	CMakeCache.txt			glfw
+01shader_vbo2			05fbo_fxaa			07geometry_shader_blending	11tesselation			CMakeFiles			glxw
+02indexed_vbo			06instancing1			08map_buffer			12shader_image_load_store	Makefile			running_OpenGL-Examples
+bash-3.2$ ./13compute_shader_nbody 
+e=65543 c=[The requested client API version is unavailable]
+failed to open window
+bash-3.2$ exit
+exit
+
+Script done on Wed Nov 13 22:25:39 2013
