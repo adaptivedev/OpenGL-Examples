@@ -20,6 +20,9 @@
 #include <cstdlib>
 #include <cmath>
 
+#include <iostream>
+
+using namespace std;
 
 // helper to check and display for shader compiler errors
 bool check_shader_compile_status(GLuint obj) {
@@ -51,6 +54,10 @@ bool check_program_link_status(GLuint obj) {
     return true;
 }
 
+void glfw_error_handler(int e, const char *c) {
+  cout << "e=" << e << " c=[" << c << "]" << endl;
+}
+
 int main() {
     int width = 640;
     int height = 480;
@@ -62,9 +69,12 @@ int main() {
 
     // select opengl version
     glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
+    glfwWindowHint(GLFW_OPENGL_FORWARD_COMPAT, GL_TRUE);
     glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 4);
     glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);
  
+    glfwSetErrorCallback(glfw_error_handler); // create a window
+
     // create a window
     GLFWwindow *window;
     if((window = glfwCreateWindow(width, height, "13compute_shader_nbody", 0, 0)) == 0) {

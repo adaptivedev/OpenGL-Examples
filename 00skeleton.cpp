@@ -10,6 +10,12 @@
 
 #include <iostream>
 
+using namespace std;
+
+void glfw_error_handler(int e, const char *c) {
+  cout << "e=" << e << " c=[" << c << "]" << endl;
+}
+
 int main() {
     int width = 640;
     int height = 480;
@@ -21,10 +27,12 @@ int main() {
 
     // select opengl version
     glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
+    glfwWindowHint(GLFW_OPENGL_FORWARD_COMPAT, GL_TRUE);
     glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);
     glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);
 
-    // create a window
+    glfwSetErrorCallback(glfw_error_handler); // create a window
+
     GLFWwindow *window;
     if((window = glfwCreateWindow(width, height, "00skeleton", 0, 0)) == 0) {
         std::cerr << "failed to open window" << std::endl;
